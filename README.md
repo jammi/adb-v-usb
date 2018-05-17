@@ -85,23 +85,25 @@ USBASP ISP connector (male):
       SCK ┌┘7 │ 8 │ GND
      MISO │ 9 │10 │ GND
           └───┴───┘
-
 ADB cable (male):
 
+![
            ╭────╮
       +5V ╱ 3  4 ╲ GND
     Data │ 1    2 │ Power key
           ╲  ┌┐  ╱
            ╰─┴┴─╯
-
+](doc/img/adb-connector.svg)
 
 ADB receptacle (female):
 
+![
                 ╭────╮
            GND ╱ 4  3 ╲ +5V
     Power key │ 2    1 │ Data
                ╲  ┌┐  ╱
                 ╰─┴┴─╯
+](doc/img/adb-receptacle.svg)
 
 ADB receptacle (pcb mount female, solder side)
 
