@@ -1,8 +1,14 @@
+* Fixed international keymaps
+* Added more information to README about connectors
+* Updated V-USB library
+
+adb-v-usb-5
+-----------
 * Fixed incompatibility with Dell OptiPlex 755 BIOS that prevented use of keyboard after resetting.
 * Fixed USB synchronization issue where it could do ADB polling more often than every 12ms.
 * Added ADB_TXD_PULLUP to drive TXD high, allowing use of 1K series resistor as ADB data pull-up
 * Improved keymap interface to allow custom handling of all keys, allowing potential layers, generation of multi-key macros
-* Added ADB_SWAP_CMD_OPTION to act like Apple ADB keyboard
+* Added USE_AS_MACINTOSH_KEYBOARD to act like Apple ADB keyboard
 * Fixed to not give any low-level USB errors when PC is resuming from sleep
 * Improved power key to respond immediately and wake PC
 * Fixed boot protocol mode to work properly after reboot (used when booting PC into BIOS setup program)

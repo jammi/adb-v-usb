@@ -243,7 +243,7 @@ section at the end of this file).
  * you use obdev's free shared VID/PID pair. Be sure to read the rules in
  * USBID-License.txt!
  */
-#define USB_CFG_DEVICE_VERSION  0x00, 0x01
+#define USB_CFG_DEVICE_VERSION  0x00, 0x02
 /* Version number of the device: Minor number first, then major number.
  */
 #define USB_CFG_VENDOR_NAME     'o', 'b', 'd', 'e', 'v', '.', 'a', 't'
@@ -254,10 +254,10 @@ section at the end of this file).
  * If you don't want a vendor name string, undefine these macros.
  * ALWAYS define a vendor name containing your Internet domain name if you use
  * obdev's free shared VID/PID pair. See the file USBID-License.txt for
- * details. 
+ * details.
  */
-#define USB_CFG_DEVICE_NAME     'H', 'I', 'D', 'K', 'e', 'y', 's'
-#define USB_CFG_DEVICE_NAME_LEN 7
+#define USB_CFG_DEVICE_NAME     'A', 'D', 'B', ' ', 'K', 'e', 'y', 'b', 'o', 'a', 'r', 'd'
+#define USB_CFG_DEVICE_NAME_LEN 12
 /* Same as above for the device name. If you don't want a device name, undefine
  * the macros. See the file USBID-License.txt before you assign a name.
  */

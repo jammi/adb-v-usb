@@ -7,23 +7,23 @@ I've been using this for months as my main keyboard interface.
 
 Files
 -----
-	usbdrv/					V-USB library
-	usbconfig.h
-	usb_keyboard.c			Keyboard HID implementation
-	usb_keyboard.h	
-	usb_keyboard_event.h	Turns key press/release events into report structure
-	adb.c					ADB protocol driver
-	adb.h			
-	adb_usb.h				ADB locking caps lock, misc
-	keycode.h				
-	keymap.h				ADB to USB key code conversion
-	user_keymap.h			Key layouts for extended and compact ADB keyboards. Modify as needed.
-	main.c					Main loop, ADB polling, suspend handling, boot protocol
-	config.h				Configuration. Modify as needed.
-	Makefile				Builds program
-	README.md				Documentation
-	CHANGES.md		
-	LICENSE.txt		
+    usbdrv/                 V-USB library
+    usbconfig.h
+    usb_keyboard.c          Keyboard HID implementation
+    usb_keyboard.h  
+    usb_keyboard_event.h    Turns key press/release events into report structure
+    adb.c                   ADB protocol driver
+    adb.h           
+    adb_usb.h               ADB locking caps lock, misc
+    keycode.h               
+    keymap.h                ADB to USB key code conversion
+    user_keymap.h           Key layouts for extended and compact ADB keyboards. Modify as needed.
+    main.c                  Main loop, ADB polling, suspend handling, boot protocol
+    config.h                Configuration. Modify as needed.
+    Makefile                Builds program
+    README.md               Documentation
+    CHANGES.md      
+    LICENSE.txt     
 
 
 Features
@@ -61,6 +61,8 @@ Construction
 
 * ADB +5V and GND go to ISP +5V and GND. ADB Data goes to ISP RX. A 1K resistor must also be connected between ADB Data and +5V. See pinouts below.
 
+* ADB Data can alternatively go to ISP J3, which also has GND in the other pin. Look on the solder side of J3 to identify GND; it's typically the one further away from the USB connector.
+
 * Set up the USBASP programmer board for reprogramming. JP1 has two jumper positions; be sure it has a jumper connecting two closer to the metal crystal (+5V). This will allowe it to be powered by the other reprogrammer. Jumper JP2 to allow external reprogramming. JP2 doesn't usually have posts soldered in, so you'll have to solder some or improvise a way to bridge the contacts. Now connect to another ISP programmer, e.g. a second USBASP programmer.
 
 * Extract sources and change to their directory. Modify config.h as desired.
@@ -76,23 +78,41 @@ Pinouts
 -------
 USBASP ISP connector (male):
 
-           ______
-	 MOSI | 1  2 | +5V
-	  GND | 3  4 | TXD
-	RESET   5  6 | RXD
-	  SCK | 7  8 | GND
-	 MISO | 9 10 | GND
-           ------
+          ┌───┬───┐
+     MOSI │ 1 │ 2 │ +5V
+      GND └┐3 │ 4 │ TXD
+    RESET  │5 │ 6 │ RXD
+      SCK ┌┘7 │ 8 │ GND
+     MISO │ 9 │10 │ GND
+          └───┴───┘
 
 ADB cable (male):
 
-	       ,-.,-.
-	  +5V / 3  4 \ GND
-	Data | 1    2 | Power key
-	      \  ==  /
-	       ------
+           ╭────╮
+      +5V ╱ 3  4 ╲ GND
+    Data │ 1    2 │ Power key
+          ╲  ┌┐  ╱
+           ╰─┴┴─╯
 
 
+ADB receptacle (female):
+
+                ╭────╮
+           GND ╱ 4  3 ╲ +5V
+    Power key │ 2    1 │ Data
+               ╲  ┌┐  ╱
+                ╰─┴┴─╯
+
+ADB receptacle (pcb mount female, solder side)
+
+      ┌────────────────────┐
+    F │  ▢                 │
+    R │ PwrKey  1▢  3▢ +5V │
+    O │  ▢                 │
+    N │   Data  2▢  4▢ GND │
+    T │  ▢                 │
+      └────────────────────┘              
+ 
 To do
 -----
 * Figure out why LEDs sometimes don't update during heavy typing. usbFunctionSetup() in usb_keyboard.c receives USBRQ_HID_SET_REPORT, but occasionally our usbFunctionWrite() doesn't get called.
