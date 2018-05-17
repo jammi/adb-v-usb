@@ -78,6 +78,7 @@ Pinouts
 -------
 USBASP ISP connector (male):
 
+![
           ┌───┬───┐
      MOSI │ 1 │ 2 │ +5V
       GND └┐3 │ 4 │ TXD
@@ -86,27 +87,29 @@ USBASP ISP connector (male):
      MISO │ 9 │10 │ GND
           └───┴───┘
 ADB cable (male):
+](doc/img/isp-header.svg)
 
 ![
-           ╭────╮
+           ╭─╮╭─╮
       +5V ╱ 3  4 ╲ GND
-    Data │ 1    2 │ Power key
-          ╲  ┌┐  ╱
-           ╰─┴┴─╯
+    Data │ 1 __ 2 │ Power key
+         ╰╮ └──┘ ╭╯
+          ╰──────╯
 ](doc/img/adb-connector.svg)
 
 ADB receptacle (female):
 
 ![
-                ╭────╮
+                ╭─╮╭─╮
            GND ╱ 4  3 ╲ +5V
-    Power key │ 2    1 │ Data
-               ╲  ┌┐  ╱
-                ╰─┴┴─╯
+    Power key │ 2 __ 1 │ Data
+              ╰╮ └──┘ ╭╯
+               ╰──────╯
 ](doc/img/adb-receptacle.svg)
 
 ADB receptacle (pcb mount female, solder side)
 
+![
       ┌────────────────────┐
     F │  ▢                 │
     R │ PwrKey  1▢  3▢ +5V │
@@ -114,7 +117,8 @@ ADB receptacle (pcb mount female, solder side)
     N │   Data  2▢  4▢ GND │
     T │  ▢                 │
       └────────────────────┘              
- 
+ ](doc/img/adb-solderpattern.svg)
+
 To do
 -----
 * Figure out why LEDs sometimes don't update during heavy typing. usbFunctionSetup() in usb_keyboard.c receives USBRQ_HID_SET_REPORT, but occasionally our usbFunctionWrite() doesn't get called.
