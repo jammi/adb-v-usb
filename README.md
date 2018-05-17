@@ -86,8 +86,9 @@ USBASP ISP connector (male):
       SCK ┌┘7 │ 8 │ GND
      MISO │ 9 │10 │ GND
           └───┴───┘
-ADB cable (male):
 ](doc/img/isp-header.svg)
+
+ADB cable (male):
 
 ![
            ╭─╮╭─╮
