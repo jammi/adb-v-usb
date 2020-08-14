@@ -10,8 +10,8 @@
       <tspan x="-269.093" y="-135.5" font-family="DejaVuSans" font-size="68" fill="#000000">Solder side</tspan>
       <tspan x="-269.093" y="-56.5" font-family="DejaVuSans" font-size="68" fill="#000000">1: ADB Data</tspan>
       <tspan x="-269.093" y="22.5" font-family="DejaVuSans" font-size="68" fill="#000000">2: Power Key</tspan>
-      <tspan x="-269.093" y="101.5" font-family="DejaVuSans" font-size="68" fill="#000000">3: GND</tspan>
-      <tspan x="-269.093" y="180.5" font-family="DejaVuSans" font-size="68" fill="#000000">4: +5V DC</tspan>
+      <tspan x="-269.093" y="101.5" font-family="DejaVuSans" font-size="68" fill="#000000">3: +5V DC</tspan>
+      <tspan x="-269.093" y="180.5" font-family="DejaVuSans" font-size="68" fill="#000000">4: GND</tspan>
     </text>
     <g>
       <path d="M169.333,252 C159.76,252 152,244.24 152,234.667 C152,225.094 159.76,217.333 169.333,217.333 C178.906,217.333 186.667,225.094 186.667,234.667 C186.667,244.24 178.906,252 169.333,252 z" fill="#FFFFFF"/>

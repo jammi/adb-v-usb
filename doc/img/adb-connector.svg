@@ -31,8 +31,8 @@
       <tspan x="-269.093" y="-135.5" font-family="DejaVuSans" font-size="68" fill="#000000">Connector side</tspan>
       <tspan x="-269.093" y="-56.5" font-family="DejaVuSans" font-size="68" fill="#000000">1: ADB Data</tspan>
       <tspan x="-269.093" y="22.5" font-family="DejaVuSans" font-size="68" fill="#000000">2: Power Key</tspan>
-      <tspan x="-269.093" y="101.5" font-family="DejaVuSans" font-size="68" fill="#000000">3: GND</tspan>
-      <tspan x="-269.093" y="180.5" font-family="DejaVuSans" font-size="68" fill="#000000">4: +5V DC</tspan>
+      <tspan x="-269.093" y="101.5" font-family="DejaVuSans" font-size="68" fill="#000000">3: +5V DC</tspan>
+      <tspan x="-269.093" y="180.5" font-family="DejaVuSans" font-size="68" fill="#000000">4: GND</tspan>
     </text>
   </g>
 </svg>
